@@ -20,6 +20,12 @@ let people = { friends: [friend1, friend2, friend3]}       // Add Friends Object
 console.log(people);
 
 //  Assignment 2:Manipulating an Array: Rearranging Words
+// Objective:
+// Rearrange an array using array methods to form the sentence "I am a student of GIAIC".
+// Steps:
+// 1. Scrambled Array:
+// o Start with an array of elements in a scrambled order, like:
+// const scrambledArray = ["student", "of",true, 123, "am", "a", "GIAIC", "I"];
 // • Modify the Array:
 // • Use methods like split(), join(), push(), pop(), shift(), and unshift() to: 
 // o Convert non-strings (booleans, numbers) to strings if needed.
@@ -29,11 +35,18 @@ console.log(people);
 // • Output the Result:
 // • Use join() to combine elements back into a single string: "I am a student of GIAIC".
 
-let words: (string | number | boolean)[] = ["I", "am", "a", "student", "of", "GIAIC"];  // Original array of words
-words = words.map(word => typeof word === "string" ? word : String(word));  // Convert non-strings to strings if needed
-const rearrangedWords = [words[0], words[1], words[2], words[5], words[3], words[4]];// Rearrange words in the desired order
-const result = rearrangedWords.join(" ");// Combine elements back into a single string
-console.log(result); 
+const scrambledArray = ["student", "of", true, 123, "am", "a", "GIAIC", "I"] //Given Array
+scrambledArray.splice(2,2)
+scrambledArray.pop()
+scrambledArray.unshift("I")
+scrambledArray[1] = "am";
+scrambledArray[2] = "a";
+scrambledArray[3] = "student";
+scrambledArray[4] = "of";
+scrambledArray[5] = "GIAIC";
+console.log(scrambledArray)
+console.log(scrambledArray.join(" "));
+
 
 // Assignment 3: Company Product Catalog
 // Learning Objective: Implement data structures in TypeScript to represent and manage product 
