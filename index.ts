@@ -62,8 +62,7 @@ console.log("Name of the first product:", inventory.Product[0].name);  //Explori
 console.log("Cost of the second product:", inventory.Product[1].cost);
 console.log("Model of the first product:", inventory.Product[2].model);
 
-// Assignment 4:
-// Student List Organizer
+// Assignment 4: // Student List Organizer
 // Learning Objective: Get comfortable with data structures (objects and arrays) and basic functions in TypeScript.
 // Tasks: 1. Student Data: The provided code defines an interface named Student that describes 
 // student information like name, senior status (true/false), and whether they've completed their assignments (true/false).
@@ -72,12 +71,24 @@ console.log("Model of the first product:", inventory.Product[2].model);
 // o An array named students stores information about several students using the Student template. Think of this array as your class list!
 // 3. Find Senior Students with Assignments (Optional):
 // o The code (not shown here) has a function that might find students who are seniors and have completed their assignments.
-// o Can you guess why this information might be helpful?
-// 4. Class List Update:
+// o Can you guess why this information might be helpful?// 4. Class List Update:
 // o Imagine you need to update your class list! The code (not shown here) might have a function that removes students who haven't completed
-// their assignments (assuming only seniors are responsible).
-// o Can you think of any reasons why this might be useful (consider limitations)
+// their assignments (assuming only seniors are responsible).// o Can you think of any reasons why this might be useful (consider limitations)
 
+interface Student {name: string; is_Senior:boolean; assignments_Completion: boolean};  // Create interface
+let students: Student[] = [
+    { name: "Mehwish", is_Senior: true, assignments_Completion: true },  //storing student information in Array
+    { name: "Amna", is_Senior: false, assignments_Completion: true },
+    { name: "Bisma", is_Senior: true, assignments_Completion: false } ];
+console.log(students);
+
+let find_Seniors_Student_With_Assignments_Completion = (students: Student[]) => {  //  Find Senior students with assignment Completion
+ return students.filter(student => student.is_Senior && student.assignments_Completion === true)};
+console.log(find_Seniors_Student_With_Assignments_Completion(students));
+
+let removes_Student= (students: Student[]) => {                               
+return students.filter(student => student.assignments_Completion === false)}       // 4.Class list update
+console.log(removes_Student(students));
 
 
 
